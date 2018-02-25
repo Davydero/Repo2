@@ -5,14 +5,14 @@ const char* ssid="HUAWEI_P9_4069";
 const char* password="";
 const char* mqtt_server="iot.eclipse.org";
 char hum[5];
-int humedad=10;
+int humedad=112;
 
 WiFiClient espClient;
 PubSubClient client (espClient);
 char msg[50];
 
 void setup(){
-	
+
 	pinMode(BUILTIN_LED,OUTPURT);
 	Serial.begin(115200);
 	setup_wifi();
@@ -30,7 +30,7 @@ void setup_wifi(){
 	{
 	delay(500);
 	Serial.print(".");
-	}	
+	}
 
 	Serial.println("");
 	Serial.println("WiFi conectado");
@@ -79,7 +79,7 @@ void loop(){
 	Serial.println(hum);
 	client.publish("ucbtja_s5",strcat(hum,"_h"));
 	humedad++;
-	
+
 
 
 
